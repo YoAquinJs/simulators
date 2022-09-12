@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="shortcut icon" href="UnityFiles/TemplateData/favicon.ico">
+        <link rel="stylesheet" href="UnityFiles/TemplateData/style.css">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <script src="index.js"></script>
+
+        <title>Gases</title>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand nav-text" href="index.html">
+                    <span style="color: #d2f4ea">S</span>
+                    <span style="color: #d2f4ea">I</span>
+                    <span style="color: #a6e9d5">M</span>
+                    <span style="color: #a6e9d5">U</span>
+                    <span style="color: #79dfc1">L</span>
+                    <span style="color: #79dfc1">A</span>
+                    <span style="color: #4dd4ac">T</span>
+                    <span style="color: #4dd4ac">O</span>
+                    <span style="color: #20c997">R</span>
+                    <span style="color: #20c997">S</span>
+                </a>
+                <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Pages -->
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav me-auto mt-2 justify-content-end">
+                        <li class="nav-item"><a class="nav-link" href="pendulum.html"><p class="nav-text">Pendulum</p></a></li>
+                        <li class="nav-item"><a class="nav-link" href="parabolic.html"><p class="nav-text">Parabolic</p></a></li>
+                        <li class="nav-item"><a class="nav-link" href="gases.html"><p class="nav-text">Gases</p></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+         <div id="background"></div>
+
+        <main class="container-fluid pb-1 mt-5 text-center">
+            <div class="mb-1 position-relative start-50 translate-middle">
+                <h2 class="introduction-text" class="d-inline">Gases Difusion &nbsp;&nbsp;<button id="unity-fullscreen-button" class="btn btn-lg button normal-text">Expand</button> (expand to play)
+                </h2>
+            </div>
+
+            <div id="unity-container" class="unity-desktop ">
+                <canvas id="unity-canvas" width=960 height=600></canvas>
+                <div id="unity-loading-bar">
+                    <div id="unity-logo"></div>
+                    <div id="unity-progress-bar-empty">
+                        <div id="unity-progress-bar-full"></div>
+                    </div>
+                </div>
+                <div id="unity-mobile-warning">
+                    WebGL builds are not supported on mobile devices.
+                </div>
+                <div class="mb-5"></div>
+            </div>
+
+        </main>
+ 
+        <footer class="pb-3">
+            Made by <a href="https://github.com/YoAquinJs" target="_blank">YoAquinJs</a>
+        </footer>
+
+        <script>
+            var buildUrl = "UnityFiles/BuildGases";
+            var loaderUrl = buildUrl + "/gases.loader.js";
+            var config = {
+              dataUrl: buildUrl + "/gases.data",
+              frameworkUrl: buildUrl + "/gases.framework.js",
+              codeUrl: buildUrl + "/gases.wasm",
+              streamingAssetsUrl: "StreamingAssets",
+              companyName: "DefaultCompany",
+              productName: "Physics",
+              productVersion: "1.0",
+            };
+
+            var container = document.querySelector("#unity-container");
+            var canvas = document.querySelector("#unity-canvas");
+            var loadingBar = document.querySelector("#unity-loading-bar");
+            var progressBarFull = document.querySelector("#unity-progress-bar-full");
+            var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+            var mobileWarning = document.querySelector("#unity-mobile-warning");
+
+            // By default Unity keeps WebGL canvas render target size matched with
+            // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+            // Set this to false if you want to decouple this synchronization from
+            // happening inside the engine, and you would instead like to size up
+            // the canvas DOM size and WebGL render target sizes yourself.
+            // config.matchWebGLToCanvasSize = false;
+
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+              container.className = "unity-mobile";
+              // Avoid draining fillrate performance on mobile devices,
+              // and default/override low DPI mode on mobile browsers.
+              config.devicePixelRatio = 1;
+              mobileWarning.style.display = "block";
+              setTimeout(() => {
+                mobileWarning.style.display = "none";
+              }, 5000);
+            } else {
+              canvas.style.width = "960px";
+              canvas.style.height = "600px";
+            }
+            loadingBar.style.display = "block";
+
+            var script = document.createElement("script");
+            script.src = loaderUrl;
+            script.onload = () => {
+              createUnityInstance(canvas, config, (progress) => {
+                progressBarFull.style.width = 100 * progress + "%";
+              }).then((unityInstance) => {
+                loadingBar.style.display = "none";
+                fullscreenButton.onclick = () => {
+                  unityInstance.SetFullscreen(1);
+                };
+              }).catch((message) => {
+                alert(message);
+              });
+            };
+            document.body.appendChild(script);
+        </script>
+    </body>
+</html>

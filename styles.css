@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display&display=swap');
+
+/* Global Background Color */
+body{
+    background-color: #13795b;
+}
+
+
+/* Nav Bar */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+nav{
+    background-color: #0d503c;
+}
+
+.nav-text{
+    font-family: 'Righteous', cursive;
+    color: #1aa179;
+    margin-bottom: 0;
+}
+
+
+/* Background */
+#background{
+    top: 0;
+    position: absolute;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 0;
+}
+
+#background .row{
+    position: relative;
+    width: 100%;
+    display: flex;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    top: -25%;
+    padding: 10px 0;
+    transform: rotate(15deg);
+}
+
+#background .row div img{
+    filter: invert(19%) sepia(14%) saturate(2880%) hue-rotate(114deg) brightness(108%) contrast(90%);
+    width: 56px;
+    height: 56px;
+    padding: 0 3px;
+    transition: .8s;
+    user-select: none;
+    cursor: default;
+    opacity: 0.8;
+}
+
+#background .row div img:hover{
+    transition: 0s;
+    filter: invert(44%) sepia(97%) saturate(387%) hue-rotate(111deg) brightness(95%) contrast(83%);
+    box-shadow: 0 0 50px #087990;
+}
+
+@keyframes anim0{
+    0%{
+        transform: translatex(100%);
+    }
+    100%{
+        transform: translatex(-105%);
+    }
+}
+
+@keyframes anim1{
+    0%{
+        transform: translatex(-105%);
+    }
+    100%{
+        transform: translatex(100%);
+    }
+}
+
+
+/* Scrollbar */
+body::-webkit-scrollbar {
+    width: 0.4rem;
+    height: 0.4rem;
+  }
+
+body::-webkit-scrollbar-track {
+    background: #0d503c;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #1aa179;
+}
+
+
+/* Texts, Buttons and Links */
+.introduction-text{
+    font-size: xx-large;
+    font-family: 'Noto Sans Display', sans-serif;
+    font-weight: bold;
+}
+
+.normal-text{
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Noto Sans Display', sans-serif;
+}
+
+.button{
+    pointer-events: auto;
+    border: 2px solid #cff4fc;
+    background-color: #13795b;
+    color: #cff4fc;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button:hover{
+    transition: .4s;
+    transform: scale(1.15);
+    background-color: #cff4fc;
+    color: #20c997;
+}
+
+a{
+    color: #20c997;
+    pointer-events: auto;
+    text-decoration: none;
+}
+
+a:hover{
+    transition: .3s;
+    color: #1aa179;
+}
+
+.github{/* Github link */
+    width: 40px;
+    height: 40px;
+    filter: invert(83%) sepia(18%) saturate(394%) hue-rotate(166deg) brightness(110%) contrast(98%);
+}
+
+
+/* Content main container and Footer */
+main{
+    position: relative;
+    pointer-events:none;
+    z-index: 1;
+    color: #cff4fc;
+}
+
+footer{
+    position: relative;
+    font-size: large;
+    text-align: center;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    color: #cff4fc;
+}
+
+
+#carousel{/* Re enable cursor in carousel for navegation and setup margin */
+    pointer-events: auto;
+    margin: 0px 48px;
+}
+
+#projects{/* Projects container */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
