@@ -44,33 +44,31 @@
             </div>
         </nav>
 
-         <div id="background"></div>
+        <div id="background"></div>
 
         <main class="container-fluid pb-1 mt-5 text-center">
             <div class="mb-1 position-relative start-50 translate-middle">
-                <h2 class="introduction-text" class="d-inline">Simple Pendulum &nbsp;&nbsp;<button id="unity-fullscreen-button" class="btn btn-lg button normal-text">Expand</button> (expand to play)
+                <h2 class="introduction-text" class="d-inline">Simple Pendulum &nbsp;&nbsp;<button id="unity-fullscreen-button" class="btn btn-lg button normal-text">Expand</button>
                 </h2>
             </div>
-
-            <div id="unity-container" class="unity-desktop">
-                <canvas id="unity-canvas" width=960 height=600></canvas>
-                <div id="unity-loading-bar">
-                    <div id="unity-logo"></div>
-                    <div id="unity-progress-bar-empty">
-                        <div id="unity-progress-bar-full"></div>
-                    </div>
-                </div>
-                <div id="unity-mobile-warning">
-                    WebGL builds are not supported on mobile devices.
-                </div>
-                <div class="mb-5"></div>
-            </div>
         </main>
-        
-        <footer class="pb-3">
-            Made by <a href="https://github.com/YoAquinJs" target="_blank">YoAquinJs</a>
-        </footer>
 
+        <!-- Unity Container -->
+        <div id="unity-container" class="unity-desktop">
+            <canvas id="unity-canvas" width=960 height=600></canvas>
+            <div id="unity-loading-bar">
+                <div id="unity-logo"></div>
+                <div id="unity-progress-bar-empty">
+                    <div id="unity-progress-bar-full"></div>
+                </div>
+            </div>
+            <div id="unity-mobile-warning">
+                WebGL builds are not supported on mobile devices.
+            </div>
+            <div class="mb-5"></div>
+        </div>
+
+        <!-- Unity Code -->
         <script>
             var buildUrl = "UnityFiles/BuildPendulum";
             var loaderUrl = buildUrl + "/pendulum.loader.js";
