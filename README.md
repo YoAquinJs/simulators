@@ -17,7 +17,7 @@ Initial varibales that can be modified are: The initial angle, the gravity accel
 
 ##### References:
 
-* https://physics.stackexchange.com/questions/243143/how-does-friction-affect-the-motion-of-a-pendulum#:~:text=Assuming%20an%20initial%20angle%20%CE%B8,(%E2%88%9AgLt
+* https://nrich.maths.org/content/id/6478/Paul-not%20so%20simple%20pendulum%202.pdf
 * https://notasfisicaymatematicas.blogspot.com/2020/02/pendulo-simple-solucion-exacta.html
 
 ## Parabolic Motion
