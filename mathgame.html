@@ -39,6 +39,7 @@
                         <li class="nav-item"><a class="nav-link" href="pendulum.html"><p class="nav-text">Pendulum</p></a></li>
                         <li class="nav-item"><a class="nav-link" href="parabolic.html"><p class="nav-text">Parabolic</p></a></li>
                         <li class="nav-item"><a class="nav-link" href="gases.html"><p class="nav-text">Gases</p></a></li>
+                        <li class="nav-item"><a class="nav-link" href="mathgame.html"><p class="nav-text">MathGame</p></a></li>
                     </ul>
                 </div>
             </div>
@@ -48,7 +49,7 @@
 
         <main class="container-fluid pb-1 mt-5 text-center">
             <div class="mb-1 position-relative start-50 translate-middle">
-                <h2 class="introduction-text" class="d-inline">Simple Pendulum &nbsp;&nbsp;<button id="unity-fullscreen-button" class="btn btn-lg button normal-text">Expand</button>
+                <h2 class="introduction-text" class="d-inline">Math Game &nbsp;&nbsp;<button id="unity-fullscreen-button" class="btn btn-lg button normal-text">Expand</button>
                 </h2>
             </div>
         </main>
@@ -73,8 +74,8 @@
             var buildUrl = "UnityFiles/BuildMathgame";
             var loaderUrl = buildUrl + "/mathgame.loader.js";
             var config = {
-              dataUrl: buildUrl + "/pendulum.data",
-              frameworkUrl: buildUrl + "/Mmthgame.framework.js",
+              dataUrl: buildUrl + "/mathgame.data",
+              frameworkUrl: buildUrl + "/mathgame.framework.js",
               codeUrl: buildUrl + "/mathgame.wasm",
               streamingAssetsUrl: "StreamingAssets",
               companyName: "DefaultCompany",
