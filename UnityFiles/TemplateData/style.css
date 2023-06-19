@@ -15,7 +15,8 @@ body { padding: 0; margin: 0 }
 }
 
 #unity-canvas{
-	background: #231F20 
+	background: #231F20;
+	border: 5px solid #0d503c
 }
 
 .unity-mobile #unity-canvas{
