@@ -1,7 +1,7 @@
 $scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
 $parentFolder = $scriptPath
 $extensionsToRename = ".wasm", ".js", ".data"
-# Function to recursively rename files with specified extensions in subfolders
+
 function Rename-Files {
     param(
         [Parameter(Mandatory=$true)]
@@ -20,5 +20,5 @@ function Rename-Files {
     }
 }
 
-# Start renaming files with specified extensions in the parent folder and its subfolders
+
 Rename-Files -path $parentFolder
