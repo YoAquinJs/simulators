@@ -1,35 +1,53 @@
 # Physics Simulators With Unity Engine
 ## Deployment: https://yoaquinjs.github.io/simulators/
-<br/>
 
 ### Description:
-<br/>
 
-Static Webpage with 3 physics simulators, simple pendulum with accurate solution to non aproximated differential equation and pendulum with friction, parabolic motion with alterable initial conditions (gravity, velocity, height) and time evaluation and gas diffusion graham law for different molecules and elements in gas state with different proportion of both and different initial velocity in particles of both gases, all simulators contain UI elements (maninly sliders) to control variables that are used in the simulation, all main simulator scripts are written in c# and the project its compiled in Unity WebGl build, the webpage its programmed using plain html, css with bootstrap and javascript for a cool background icon effect.
+Static web page with 2 physics simulators, a chemistry simulator, and a math game. The simulators let you control variables that are used in the simulation, all main simulator scripts are written in c# and the project is compiled using Unity WebGL build, the webpage is programmed using plain HTML, CSS with Bootstrap, and JavaScript.
 
-## Simple Pendulum
+* **Simple Pendulum**
 
-Simulation using accurate solution for the pendulums Theta(t) differential equation (without the Sine(Theta) = Theta aproximation) using JacobiSN integral eliptic function, as well as for the pendulum period (computed with the extended equation), include option for pendulum with air resistence in wich the differential equation is solved with the added friction term with a given friction coeficient.
+  Simulation using the accurate solution for the pendulum system, solving the Theta(t) differential equation (without the Sine(Theta) = Theta approximation) using JacobiSN integral elliptic function, as well as for the pendulum period (computed with the extended equation), also including an option for a damped pendulum, taking in account friction, given a coefficient for solving the equation.
 
-Kinetic and gravitational potential energy are calculated in each position of the pendulum in time (except with friction) to ilustrate the conservation of energy law in the pendulum system, time can be stopped for analizyng a particular time in the pendulum.
+  Kinetic and gravitational potential energy are calculated in each position of the pendulum in time, to illustrate the conservation of energy law in the pendulum system, time can be stopped for analyzing a particular time in the pendulum.
 
-Initial varibales that can be modified are: The initial angle, the gravity acceleration, the length from the mass to the axis, the mass attached and the friction coeficient.
+  Variables:
+  * Initial angle.
+  * Gravity acceleration.
+  * Pendulum Length.
+  * Mass.
+  * Friction coefficient.
 
-##### References:
+* **Parabolic Motion**
+
+  Simulation using standard equations for parabolic motion MRU for x(t), and MRUA for y(t), for the ideal motion, neglecting friction, also solves for the max height, the total flight time, and horizontal reach.
+
+  Kinetic and gravitational potential energy are calculated in each motion position with a time slider to return to a given time and analyze.
+
+  Variables:
+  * Initial velocity magnitude.
+  * Initial velocity angle.
+  * Gravity acceleration.
+  * Height from the floor.
+
+* **Gas Diffusion**
+
+  Grahan law for gas diffusion is calculated using the molar mass of the particles of gas, and gas motion is simulated with the initial velocity and mass for particle scale (particles are not scaled according to reality).
+
+  Variables:
+  * Initial velocity for both gases.
+  * Amount of particles for both gases.
+  * Types of gas (which change the molar mass).
+
+* **Math Game**
+
+  The game consists of graphing mathematical functions to make the ball go through all the dots in the scene.
+
+  Variables:
+  * Equation for function 1.
+  * Equation for function 2.
+
+#### References:
 
 * https://nrich.maths.org/content/id/6478/Paul-not%20so%20simple%20pendulum%202.pdf
 * https://notasfisicaymatematicas.blogspot.com/2020/02/pendulo-simple-solucion-exacta.html
-
-## Parabolic Motion
-
-Simulation using standar equations for parabolic motion in both axis (MRU and MRUA equations for X(t)) for the ideal motion neglecting friction, also solves for the max height, the total flight time and horizontal reach.
-
-Kinetic and gravitational potential energy are calculated in each position of the motion with a time slider to return to a given time and analizy.
-
-Initial varibales that can be modified are: The initial velocity magnitude, the initial velocity angle, the gravity acceleration, the height from the floor.
-
-## Gas Difusion
-
-Grahan law for gas diffusion calculated using the molar mass of the particles of gas, and gas motion simulated with the initial velocity and mass for particle scale (particles are not scaled according to reality).
-
-Initial varibales that can be modified are: The initial velocity for both gases, the amount of particles for both gases, the two types of gas wich changes the molar mass.
